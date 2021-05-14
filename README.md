@@ -3,8 +3,8 @@
 This is a small project that builds upon
 [Apache's PDFBox](http://pdfbox.apache.org) and should allow you
 to create tables in a fairly simple way.
-It emerged from the need in another project. Therefore it also may miss some
-crucial features. Nevertheless there is:
+It emerged from the need in another project. Therefore, it also may miss some
+crucial features. Nevertheless, there is:
 
 *   setting font, font size, padding, border width on table, row and cell level
 *   setting single cells with bottom-, top-, left- and right-border width separately
@@ -31,7 +31,7 @@ Add this to your `pom.xml`:
     <dependency>
         <groupId>com.github.vandeseer</groupId>
         <artifactId>easytable</artifactId>
-        <version>0.7.0</version>
+        <version>0.8.3</version>
     </dependency>
 
 Or checkout the repository and install it locally with maven (e.g. for the`develop` branch):
@@ -106,6 +106,9 @@ In case you are using maven for instance in your `pom.xml`:
         </exclusions>
     </dependency>
 
+Note though that the jitpack.io repository may not provide the package anymore, 
+also see [issue #123](https://github.com/vandeseer/easytable/issues/123)!
+
 ### Setting the Page on `TableDrawer`
 
 Please note that you also need to set the `page(...)` on the `TableDrawer` in case you 
@@ -134,6 +137,7 @@ improvements
 *   to [msww](https://github.com/msww) for finding a [small issue](https://github.com/vandeseer/easytable/issues/85)
 *   to [VakhoQ](https://github.com/VakhoQ) for implementing border styles
 *   to [Ralf Stuckert](https://github.com/ralfstuckert) for creating [pdfbox-layout](https://github.com/ralfstuckert/pdfbox-layout)
+*   to [Miloš Čadek](https://github.com/c4da) for implementing alignment of vertical text cells
 
 ## Q&A
 
@@ -172,20 +176,10 @@ should use `RepeatedHeaderTableDrawer` or `TableDrawer` respectively.
 
 Yes. Just use the `.getFinalY()` method. Also see [FinalYTest.java](src/test/java/org/vandeseer/integrationtest/FinalYTest.java).
 
-### Does it work with Java < 8?
-
-Nope. You will need at least Java 8.
-
-### Does it work with PDFBox 1.8.9?
-
-Well, Using it with PDFBox 1.8.9 requires you to check out version
-0.0.7 (tagged as such in git) and install it locally, i.e.:
-
-    git checkout v0.0.7
-    mvn clean install
-
-Note though that the API has changed quite a bit in the meantime ...
-
 ### Cool, I like it, can I buy you a beer?
 
-Yes. Or you can upvote this answer on [stackoverflow](https://stackoverflow.com/questions/28059563/how-to-create-table-using-apache-pdfbox/42612456#42612456).
+Yes. Or you can upvote this answer on [stackoverflow](https://stackoverflow.com/questions/28059563/how-to-create-table-using-apache-pdfbox/42612456#42612456). Or:
+
+<a href="https://paypal.me/SDeser/5">
+  <img src="https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png" alt="Donate with PayPal" width="300px"/>
+</a>
